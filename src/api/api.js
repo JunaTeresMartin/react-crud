@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_URL = "https://react-crud-server-hgwj.onrender.com";
+const API_URL = "https://react-crud-server-wl1a.onrender.com/mynotes";
 // Fetch all notes
 export const getItems = async () => {
   const response = await axios.get(API_URL);
@@ -15,11 +15,11 @@ export const addItem = async (item) => {
 
 // Delete a note
 export const deleteItem = async (id) => {
-  await axios.delete(`${API_URL}/mynotes/${id}`);
+  await axios.delete(`${API_URL}/${id}`);
 };
 
 // Update a note
 export const updateItem = async (id, updatedItem) => {
-  const response = await axios.put(`${API_URL}/mynotes/${id}`, updatedItem);
+  const response = await axios.put(`${API_URL}/${id}`, updatedItem);
   return response.data;
 };
